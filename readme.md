@@ -16,17 +16,27 @@ Rules of the Game:
 
 // Enjoy your stay and may you draw well!
 
+=========================================
 Code walk-through:
+=========================================
 
-// Each card will be stored in an object called fullDeck separated by suits and values
+// Store all data that will not change in constants section (# of players & win states)
 
-// The fullDeck array will be looped through with a forEach method, and at random with the Math function
+// Store app's state variables (things app needs to remember)
 
-// The DOM will be manipulated with methods like textContent and append() so that the fullDeck array will deal the cards to all users once the user clicks the “Play” button, which will be attached to an event listener.
+// When player hits "Play" button render() function will initialize all state variables
+
+// Once initialized game begins with fresh slate
+
+// When game begins deck will deal two cards to each player
+
+// A card will be pushed to userHand everytime player clicks "Hit"
+
+// playersArr will move to next player when user clicks "Stay"
 
 // The DOM will continue to generate new cards to the user, or stop based on the user’s selection of “Hit” or “Stay”.
 
 // The “Reset” button will be attached to an event listener that will clear all locally stored data and start the game over if clicked.
+
 Wireframe Link:
  https://balsamiq.cloud/sf4ytat/pn3zgy1
-
