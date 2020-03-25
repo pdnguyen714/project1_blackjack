@@ -1,56 +1,146 @@
-// sync check
-console.log("Linked");
+console.log("Working");
 
 /*----- constants -----*/
-const game = {
-    playerHand: [],
-}
 
-const fullDeck = {
+const dealer = "Dealer";
+const player = "You";
+const tie = "tie";
 
-}
+/*----- app's state variables (mutable) -----*/
 
-/*----- app's state (variables) -----*/
-
-let playerWon;
-let playerTie;
-let playerStart;
-let playerReset;
-
-/*----- cached element references -----*/
-
-let $innerBox = $('.innerBox');
-let $buttons = $('.buttons');
-let $playbutton = $('#playButton');
-let $resetbutton = $('#resetButton');
-
-/*----- event listeners -----*/
-
-$innerBox.on('click', handleClick)
-
+let playerHand = [];
+let dealerHand = [];
+let iswinner = null;
+let pScore = 0;
+let dScore = 0;
 
 /*----- functions -----*/
 
+function startOfGame() {
+  startGame();
+}
+
+//Fisher-Yate's shuffle algorithm
+
+function shuffle(deck) {
+  let i = 0,
+    j = 0,
+    temp = null;
+  for (i = deck.length - 1; i > 0; i -= 1) {
+    j = Math.floor(Math.random() * (i + 1));
+    temp = deck[i];
+    deck[i] = deck[j];
+    deck[j] = temp;
+  }
+}
+
+//gives 2 cards to the dealer and player at the start
+
+function initialHand() {
+  shuffle(deck);
+  for (let i = 0; i < 2; i++) {
+    playerHand.push(deck.pop());
+    dealerHand.push(deck.pop());
+  }
+  return playerHand, dealerHand;
+}
+
+//adds a card to the player's hand
+
+function hit() {
+  playerHand.push(deck.pop());
+  render();
+  calculateScore();
+}
+
+function stay() {
+  while (dScore < 18) {
+    dealerHand.push(deck.pop());
+    render();
+  }
+  calculateScore();
+}
+
+function reset() {
+  startGame();
+}
+
+function calculateScore() {
+  let pScore = 0;
+  let dScore = 0;
+
+  playerHand.forEach(function(card) {
+    pScore += card.value;
+    document.getElementById("player-score").innerHTML = "Score: " + pScore;
+    return pScore;
+  });
+
+  dealerHand.forEach(function(card) {
+    dScore += card.value;
+    document.getElementById("dealer-score").innerHTML = "Score: " + dScore;
+    return dScore;
+  });
+
+  // console.log(pScore);
+
+  if (pScore > 21 && dScore < 21) {
+    iswinner = dealer;
+    checkForWinner();
+  }
+}
+
 function render() {
-    // render all states of app to DOM
-    // no business/game logic
-    // display win, tie, or lose message
+  document.getElementById("dealer-hand").innerHTML = "";
+  dealerHand.forEach(card => {
+    let dealerCards = `<div class="card ${card.face}"></div>`;
+    document.getElementById("dealer-hand").innerHTML += dealerCards;
+  });
+
+  document.getElementById("player-hand").innerHTML = "";
+  playerHand.forEach(card => {
+    let playerCards = `<div class="card ${card.face}"></div>`;
+    document.getElementById("player-hand").innerHTML += playerCards;
+  });
+
+  checkForWinner();
 }
 
-function handleClick(evt) {
-    console.log(evt);
-    // render();
+// checks for winner
+
+function checkForWinner() {
+  if (iswinner !== null) {
+    if (iswinner == player) {
+      document.getElementById("winner").innerHTML = "Congrats! You won.";
+    } else if (iswinner == dealer) {
+      document.getElementById("winner").innerHTML = "Sorry, you lost :(";
+    } else {
+      document.getElementById("winner").innerHTML = "It's a tie!";
+    }
+  }
 }
 
-// function init() {
-// render();
-// }
+function startGame() {
+  initialHand();
+  render();
+  calculateScore();
+  checkForWinner();
+}
 
-// function checkForWin()
+startGame();
 
-// function genRandomHand
+/*----- event listeners -----*/
 
-// function bet
-// function hit
-// function stand
-// function generating next turn
+let hitButton = document.getElementById("hit");
+hitButton.addEventListener("click", function(e) {
+  hit();
+});
+
+let stayButton = document.getElementById("stay");
+stayButton.addEventListener("click", function(e) {
+  stay();
+});
+
+let resetButton = document.getElementById("reset");
+resetButton.addEventListener("click", function(e) {
+  reset();
+});
