@@ -61,13 +61,18 @@ button:hover {
 
 .allPlayers {
     display: flex;
-    flex-flow: row-reverse;
+    flex-flow: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
 .dealer, .player {
-    margin: 0 10em;
+    margin: 4em 0;
+}
+
+#dealer-score, #player-score {
+    text-align: center;
 }
 
 .rules {
