@@ -20,6 +20,14 @@ function startOfGame() {
   startGame();
 }
 
+function startGame() {
+  initialHand();
+  render();
+  calculateScore();
+  checkForWinner();
+}
+
+startGame();
 //Fisher-Yate's shuffle algorithm
 
 function shuffle(deck) {
@@ -71,17 +79,15 @@ function calculateScore() {
 
   playerHand.forEach(function(card) {
     pScore += card.value;
-    document.getElementById("player-score").innerHTML = "Score: " + pScore;
+    document.getElementById("player-score").innerHTML = "Total: " + pScore;
     return pScore;
   });
 
   dealerHand.forEach(function(card) {
     dScore += card.value;
-    document.getElementById("dealer-score").innerHTML = "Score: " + dScore;
+    document.getElementById("dealer-score").innerHTML = "Total: " + dScore;
     return dScore;
   });
-
-  // console.log(pScore);
 
   if (pScore > 21 && dScore < 21) {
     iswinner = dealer;
@@ -119,14 +125,6 @@ function checkForWinner() {
   }
 }
 
-function startGame() {
-  initialHand();
-  render();
-  calculateScore();
-  checkForWinner();
-}
-
-startGame();
 
 /*----- event listeners -----*/
 
