@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -12,14 +12,14 @@ body {
     display: flex;
     justify-content: center;
     height: 100vh;
-    /* opacity: 0.5; */
+    opacity: 0.5;
     background-color: #3a853a;
 }
 
 h1 {
     text-align: center;
     border-bottom: 1px solid rgb(158, 27, 27);
-    padding-bottom: 0.5em;
+    padding: 2em 0 0 0;
     font-style: italic;
     font-size: 2em;
 }
@@ -29,11 +29,11 @@ h3 {
     font-size: 1.2em;
 }
 
-.buttons {
+main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 50vh;
+    height: 25vh;
 }
 
 button {
@@ -47,6 +47,29 @@ button {
     box-shadow: 0px 0px 1px 0px white;
 }
 
+#hit {
+    background-color: red;
+}
+
+#stay {
+    background-color: black;
+}
+
 button:hover {
     cursor: pointer;
+} */
+
+.allPlayers {
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: center;
+    width: 100%;
+}
+
+.dealer, .player {
+    margin: 0 10em;
+}
+
+.rules {
+    display: none;
 }

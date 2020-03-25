@@ -1,32 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House of Blackjack</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="assets/card-deck/css/cardstarter.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House of BlackJack</title>
+    <link rel="stylesheet" href="assets/card-deck/css/cardstarter.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="js/deck.js"></script>
     <script defer src="js/main.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div id="container">
-        <div class="innerBox">
-            <header>
-                <h1>Welcome to <br> House of Blackjack</h1> 
-                <h3>press 'Play' to start!</h3>           
-            </header>
-            <main class="buttons">
-                <button id="play">Play</button>
-                <button id="reset">Reset</button>
-            </main>
-            <div class="bottomBox">
-
+        <h1>Welcome to <br> House Of Blackjack</h1>
+        <div class="allPlayers">
+            <div class="dealer">
+                <h2>Dealer</h2>
+                <div id="dealer-hand"></div>
+                <div id="dealer-score">Score</div>
+            </div>
+            <div class="player">
+                <h2>Player</h2>
+                <div id="player-hand"></div>
+                <div id="player-score">Score</div>
             </div>
         </div>
+        <div class="buttons">
+            <button id="hit">Hit</button>
+            <button id="stay">Stay</button>
+            <button id="reset">Reset</button>
+            <button>Rules</button>
+        </div>
+        <div class="rules">
+            <div id="winner"></div>
+            <p>
+            Blackjack consists of two or more players. Each player is dealt two cards. Players each have the option to either "Hit" to draw a card, or "Stay" to keep the cards they have when it is their turn.
+            </p>
+            <p>
+            The goal is to get to 21 points. The winner is the person who is closest
+            to 21 points. If both players go over 21 points, they both lose.
+            </p>
+            <p>
+            If one person goes over 21 and the other person is under 21, the person
+            under 21 points wins.
+            </p>
+            <p>
+            Jack - Queen - King = 10pts<br> 
+            Ace = 1pt or 11pts - player's choice
+            </p>
+        </div>
     </div>
-</body>
+  </body>
 </html>
