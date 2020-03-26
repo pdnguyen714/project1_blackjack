@@ -1,6 +1,6 @@
 /* ===== Link Check ===== */
 
-console.log("JS Check");
+console.log("JS Linked");
 
 /* ===== constants ===== */
 
@@ -20,6 +20,20 @@ let dScore = 0;
 
 /* ===== functions ===== */
 
+
+// retrieve and append user's name into DOM
+
+function getName() {
+  let input = prompt('Welcome to House of Blackjack! What is your name friend?');
+  
+  if (input === null || input === '') {
+      return; //break out of the function early
+  } else if (input != null) {
+    document.getElementById('person').innerHTML = input;
+  }
+}
+
+getName();
 
 //Fisher-Yate's Shuffle algorithm
 
@@ -188,6 +202,7 @@ function clearScores() {
 
 //event listeners
 
+$('.rules').hide();
 let $toggleRules = $('#rulesBtn').on('click', function(e) {
   $('.rules').fadeToggle('slow', "linear");
 })
