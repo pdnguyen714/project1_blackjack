@@ -2,3 +2,61 @@
     box-sizing: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+body {
+    background-image: url(../assets/images/blackjack1.jpg);
+    background-color: green;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 8px double #ffffffbd;
+}
+
+#container {
+    background-color: #1d771d;
+    opacity: 0.8;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    font-size: 1.5em;
+    width: 33%;
+    height: 4em;
+    margin: 0 auto;
+    border-bottom: 1px solid #ffffff7a;
+}
+
+header:hover {
+    transition: 2s;
+    transform: scale(1.1, 1.4);
+}
+
+#winner {
+    text-align: center;
+    font-size: 2em;
+    padding: 1em 0 0 0;
+    color: #e6dcdc;
+}
+
+.allPlayers {
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-evenly;
+    margin: 2em 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.7em;
+}
+
+#dealer-score, #player-score {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

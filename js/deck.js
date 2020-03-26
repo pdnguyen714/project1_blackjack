@@ -1,4 +1,4 @@
-console.log('Linked')
+console.log('Deck Linked')
 
 const deck = [
     {value:2, face: "d02"},
