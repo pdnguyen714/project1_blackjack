@@ -2,12 +2,10 @@
     box-sizing: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
 body {
     background-color: #2c2826;
     height: 100vh;
 }
-
 #container {
     display: flex;
     justify-content: center;
@@ -15,7 +13,6 @@ body {
     opacity: 0.5;
     background-color: #3a853a;
 }
-
 h1 {
     text-align: center;
     border-bottom: 1px solid rgb(158, 27, 27);
@@ -23,19 +20,16 @@ h1 {
     font-style: italic;
     font-size: 2em;
 }
-
 h3 {
     text-align: center;
     font-size: 1.2em;
 }
-
 main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     height: 25vh;
 }
-
 button {
     height: 2em;
     width: 49%;
@@ -46,15 +40,12 @@ button {
     border-radius: 10px;
     box-shadow: 0px 0px 1px 0px white;
 }
-
 #hit {
     background-color: red;
 }
-
 #stay {
     background-color: black;
 }
-
 button:hover {
     cursor: pointer;
 } */
