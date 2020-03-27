@@ -21,13 +21,11 @@ let dScore = 0;
 
 function getName() {
   let input = prompt('Welcome to House of Blackjack! What is your name friend?');
+  if (input === null || input === '') return; //break out of the function early
+
+  document.getElementById('person').innerHTML = input;
   
-  if (input === null || input === '') {
-      return; //break out of the function early
-  } else if (input != null) {
-    document.getElementById('person').innerHTML = input;
-  }
-}
+};
 
 getName();
 
@@ -43,8 +41,8 @@ $('#closeRules').on('click', function() {
 //Fisher-Yate's Shuffle algorithm
 
 function shuffle(deck) {
-  let i = 0,
-  j = 0,
+  let i, j = 0,
+
   temp = null;
   for (i = deck.length - 1; i > 0; i -= 1) {
     j = Math.floor(Math.random() * (i + 1));
@@ -70,10 +68,19 @@ startGame();
 
 function initialHand() {
   shuffle(deck);
+
   for (let i = 0; i < 2; i++) {
     playerHand.push(deck.pop());
     dealerHand.push(deck.pop());
   }
+
+  document.getElementById("player-score").innerHTML = "Score: " + calculateScore(playerHand);
+
+  // only renders score for face up card
+  document.getElementById("dealer-score").innerHTML = "Score: " + dealerHand[0].value;
+
+  dScore = dealerHand[0].value;
+
   return playerHand, dealerHand;
 }
 
@@ -101,12 +108,14 @@ function calculateScore(hand) {
 function hit() {
   playerHand.push(deck.pop());
   pScore = calculateScore(playerHand);
+  dScore = calculateScore(dealerHand);
+
+  document.getElementById('player-score').innerHTML = "Score: " + pScore;
+
   if (pScore > 21) {
     isWinner = dealer;
-    checkForWinner();
+    checkForWinner()
   }
-  document.getElementById('dealer-score').innerHTML = "Score: " + dScore;
-  document.getElementById('player-score').innerHTML = "Score: " + pScore;
   render();
 }
 
@@ -154,16 +163,18 @@ function render() {
 
 function checkForWinner() {
   if (isWinner !== null) {
-    if (isWinner == player) {
-      document.getElementById("winner").innerHTML = "You won!";
-    } else if (isWinner == dealer) {
+    if (isWinner === player) {
+      document.getElementById('dealer-score').innerHTML = "Score: " + dScore;
+      document.getElementById("winner").innerHTML = "You won! Double or nothing?";
+    } else if (isWinner === dealer) {
+      document.getElementById('dealer-score').innerHTML = "Score: " + dScore;
       document.getElementById("winner").innerHTML = "You lost. Better luck next time!";
+    } else if (isWinner === tie) {
+      document.getElementById('dealer-score').innerHTML = "Score: " + dScore;
+      document.getElementById("winner").innerHTML = "You tied. Go for broke!";
     }
-  } else if (isWinner == tie) {
-    document.getElementById("winner").innerHTML = "You tied. Go for broke!";
-  }
+  } 
   document.getElementById("player-score").innerHTML = "Score: " + pScore;
-  document.getElementById("dealer-score").innerHTML = "Score: " + dScore;
   hide();
   showResetBtn();
 }
