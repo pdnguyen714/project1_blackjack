@@ -35,6 +35,15 @@ function getName() {
 
 getName();
 
+// closes rules modal
+
+let $getRules = $('.rules');
+let $closeX = $('#closeRules');
+
+$('#closeRules').on('click', function() {
+  $('.rules').hide();
+})
+
 //Fisher-Yate's Shuffle algorithm
 
 function shuffle(deck) {
@@ -153,12 +162,12 @@ function render() {
 function checkForWinner() {
   if (isWinner !== null) {
     if (isWinner == player) {
-      document.getElementById("winner").innerHTML = "Congrats! You won.";
+      document.getElementById("winner").innerHTML = "You won!";
     } else if (isWinner == dealer) {
-      document.getElementById("winner").innerHTML = "Sorry, you lost! But play again!";
+      document.getElementById("winner").innerHTML = "You lost. Better luck next time!";
     }
   } else if (isWinner == tie) {
-    document.getElementById("winner").innerHTML = "It's a tie!";
+    document.getElementById("winner").innerHTML = "You tied. Go for broke!";
   }
   document.getElementById("player-score").innerHTML = "Score: " + pScore;
   document.getElementById("dealer-score").innerHTML = "Score: " + dScore;
