@@ -14,6 +14,10 @@ Description:
 
 // House of Blackjack is a digital version of the game we all know and love that is now available to play for free!
 
+A screenshot of the game:
+
+![alt text] (https://github.com/pdnguyen714/project1_blackjack/blob/gh-pages/assets/images/screenshot1.png)
+
 =========================================
 Technologies Used:
 =========================================
