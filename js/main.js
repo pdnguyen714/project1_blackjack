@@ -1,7 +1,3 @@
-/* ===== Link Check ===== */
-
-console.log("JS Linked");
-
 /* ===== constants ===== */
 
 const dealer = "Dealer";
@@ -117,8 +113,6 @@ function hit() {
 //ends turn and keeps hand
 
 function stay() {
-  console.log(dealerHand);
-  console.log(playerHand);
   dScore = calculateScore(dealerHand);
   pScore = calculateScore(playerHand);
 
@@ -135,7 +129,6 @@ function stay() {
   } else if (dScore === pScore) {
     isWinner = tie;
   }
-  console.log(isWinner);
   checkForWinner();
   render();
 }
