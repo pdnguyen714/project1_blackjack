@@ -2,7 +2,11 @@
 Welcome to House of Blackjack:
 =========================================
 
+<<<<<<< HEAD
 Name: Peter Nguyen 
+=======
+Name: Peter Nguyen
+>>>>>>> cccef597b59463dcc23c155c066759f7aaa9d2e6
 
 Purpose: Project 1 for GA's SEI-71
 
@@ -84,4 +88,8 @@ Next Steps:
 
 3. Increasing number of players
 
+<<<<<<< HEAD
 4. Adding money and bet options
+=======
+4. Adding money and bet options
+>>>>>>> cccef597b59463dcc23c155c066759f7aaa9d2e6
