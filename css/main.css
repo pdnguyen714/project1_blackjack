@@ -1,5 +1,5 @@
 * {
-    box-sizing: none;
+    box-sizing: border-box;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -51,7 +51,7 @@ header {
 h2 {
     text-align: center;
     font-size: 1.7em;
-    color: thistle;
+    color: aliceblue;
 }
 
 h3 {
@@ -60,7 +60,7 @@ h3 {
 
 #dealer-score, #player-score {
     text-align: center;
-    color: thistle;
+    color: aliceblue;
 }
 
 button {
@@ -95,17 +95,25 @@ button:nth-child(3) {
 .buttons {
     display: flex;
     flex-flow: row;
-    justify-content: space-evenly;
+    justify-content: center;
 }
+
+
 
 .rules {
     position: absolute;
+    right: 1em;
+    left: 1em;
     display: flex;
     height: 100vh;
     flex-flow: column;
     text-align: center;
     font-size: 1.2em;
     background-color: #f1e5e5cc;
+}
+
+.rulesList {
+    padding: 0 2em;
 }
 
 .upperRules {
@@ -148,4 +156,48 @@ h1 {
     letter-spacing: 0.1em;
     word-spacing: 0.1em;
     font-weight: bold;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #container {
+        height: auto;
+        opacity: 0.9;
+    }
+
+    header {
+        position: initial;
+        font-size: 0.4em;
+        border: none;
+    }
+
+    #winner {
+        font-size: 1.5em;
+    }
+
+    .allPlayers {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
+    .rules {
+        display: grid;
+        padding: 0 0.5em;
+    }
+    
+    .rulesList {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0.5em;
+    }
+
+    button {
+        font-size: 0.9em;
+        border-radius: 0;
+        margin: 1em 0 0 0;
+        width: 100%;  
+    }
 }
