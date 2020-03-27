@@ -213,7 +213,7 @@ function clearScores() {
 }
 
 
-//event listeners
+/* ===== event listeners ===== */
 
 $('.rules').hide();
 let $toggleRules = $('#rulesBtn').on('click', function(e) {
