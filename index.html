@@ -6,53 +6,58 @@
     <title>House of BlackJack</title>
     <link rel="stylesheet" href="assets/card-deck/css/cardstarter.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="../assets/fontawesome-free-5.13.0-web/css/all.css">
     <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"
     ></script>
     <script defer src="js/deck.js"></script>
     <script defer src="js/main.js"></script>
   </head>
   <body>
     <div id="container">
-        <h1>Welcome to <br> House Of Blackjack</h1>
-        <div class="allPlayers">
-            <div class="dealer">
-                <h2>Dealer</h2>
-                <div id="dealer-hand"></div>
-                <div id="dealer-score">Score</div>
-            </div>
-            <div class="player">
-                <h2>Player</h2>
-                <div id="player-hand"></div>
-                <div id="player-score">Score</div>
-            </div>
+      <header>
+        <a href="index.html"><h1>THE HOUSE OF BLACKJACK</h1></a>
+      </header>
+      <div id="winner"></div>
+      <div class="allPlayers">
+        <div class="dealer">
+            <h2>Dealer</h2>
+            <div id="dealer-hand"></div>
+            <div id="dealer-score">Score</div>
         </div>
-        <div class="buttons">
-            <button id="hit">Hit</button>
-            <button id="stay">Stay</button>
-            <button id="reset">Reset</button>
-            <button>Rules</button>
+        <div class="player">
+            <h2 id="person">Player</h2>
+            <div id="player-hand"></div>
+            <div id="player-score">Score</div>
         </div>
-        <div class="rules">
-            <div id="winner"></div>
-            <p>
-            Blackjack consists of two or more players. Each player is dealt two cards. Players each have the option to either "Hit" to draw a card, or "Stay" to keep the cards they have when it is their turn.
-            </p>
-            <p>
-            The goal is to get to 21 points. The winner is the person who is closest
-            to 21 points. If both players go over 21 points, they both lose.
-            </p>
-            <p>
+      </div>
+      <div class="buttons">
+          <button id="hit">Hit</button>
+          <button id="stay">Stay</button>
+          <button id="reset">Reset</button>
+          <button id="rulesBtn">Rules</button>
+      </div>
+      <div class="rules">
+        <button id="closeRules">X</button>
+        <h3>Rules of the Game</h3>
+        <p class="rulesList">
+          Blackjack consists of two or more players. Each player is dealt two cards. Players each have the option to either "Hit" to draw a card, or "Stay" to keep the cards they have when it is their turn.
+        </p>
+        <p class="rulesList">
+          The goal is to get to 21 points. The winner is the person who is closest
+          to 21 points. If both players go over 21 points, they both lose.
+          </p>
+          <p class="rulesList">
             If one person goes over 21 and the other person is under 21, the person
-            under 21 points wins.
-            </p>
-            <p>
-            Jack - Queen - King = 10pts<br> 
-            Ace = 1pt or 11pts - player's choice
-            </p>
-        </div>
+          under 21 points wins.
+        </p>
+        <p class="rulesList">
+          Jack - Queen - King = 10pts<br> 
+          Ace = 1pt or 11pts - player's choice
+        </p>
+      </div>
     </div>
   </body>
 </html>
