@@ -2,8 +2,10 @@
 Welcome to House of Blackjack:
 =========================================
 
-Name: Peter Nguyen 
+Name: Peter Nguyen
+
 Purpose: Project 1 for GA's SEI-71
+
 Game: Blackjack
 
 =========================================
