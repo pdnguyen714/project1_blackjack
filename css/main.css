@@ -27,7 +27,7 @@ body {
 header {
     text-align: center;
     font-size: 1.5em;
-    width: 57%;
+    width: 48%;
     height: 4em;
     margin: 0 auto;
     border-bottom: 2px solid #ffffff7a;
@@ -162,15 +162,21 @@ h1 {
 
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
+    body {
+        margin: 0;
+    }
+
     #container {
-        height: auto;
+        height: 100vh;
         opacity: 0.9;
+        width: 100%;
     }
 
     header {
-        position: initial;
-        font-size: 0.4em;
+        position: relative;
+        font-size: 0.9em;
         border: none;
+        top: 2em;
     }
 
     #winner {
@@ -186,6 +192,7 @@ h1 {
     .rules {
         display: grid;
         padding: 0 0.5em;
+        height: 95vh;
     }
     
     .rulesList {
@@ -200,8 +207,4 @@ h1 {
         margin: 1em 0 0 0;
         width: 100%;  
     }
-
-    .buttons {
-        
-  }
 }
