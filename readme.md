@@ -16,7 +16,7 @@ Description:
 
 A screenshot of the game:
 
-![alt text] (https://github.com/pdnguyen714/project1_blackjack/blob/gh-pages/assets/images/screenshot1.png)
+(https://github.com/pdnguyen714/project1_blackjack/blob/gh-pages/assets/images/screenshot1.png)
 
 =========================================
 Technologies Used:
