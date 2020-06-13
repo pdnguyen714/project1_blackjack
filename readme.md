@@ -1,39 +1,30 @@
-=========================================
-Welcome to House of Blackjack:
-=========================================
+# House of Blackjack:
 
-Name: Peter Nguyen 
+## Name: Peter Nguyen 
 
-Purpose: Project 1 for General Assembly's Software Engineering Immersive
+## Purpose 
+Project 1 for General Assembly's Software Engineering Immersive
 
 Game: Blackjack
 
-=========================================
-Description:
-=========================================
+## Description:
 
 Blackjack is the American version of a popular global banking game known as Twenty-One, whose relatives include Pontoon and Vingt-et-Un. It is a comparing card game between one or more players and a dealer, where each player in turn competes against the dealer. Players do not compete against each other. It is played with one or more decks of 52 cards, and is the most widely played casino banking game in the world.
 
-// House of Blackjack is a digital version of the game we all know and love that is now available to play for free!
+House of Blackjack is a digital version of the game we all know and love that is now available to play for free!
 
-=========================================
-Screenshots:
-=========================================
+## Screenshots:
 
 ![Screenshot1](https://i.imgur.com/VWvjLPB.png)
 ![Screenshot2](https://i.imgur.com/XC0hVDK.png)
 
-=========================================
-Technologies Used:
-=========================================
+## Technologies Used:
 
- - HTML5
- - CSS3
- - JavaScript / jQuery
+ * HTML5
+ * CSS3
+ * JavaScript/jQuery
 
-=========================================
-Getting Started:
-=========================================
+## Getting Started:
 
 [Click to play!](https://pdnguyen714.github.io/project1_blackjack/)
 
@@ -45,9 +36,7 @@ All face cards (K, Q, J,) are worth ten with the exception of the “Ace” (A),
 
 Enjoy your stay and may you draw well!
 
-=========================================
-Code walk-through:
-=========================================
+## Code walk-through:
 
 Store all data that will not change in constants section (# of players & win states)
 
@@ -71,9 +60,7 @@ Render() function is used to render cards to the DOM
 
 When user cicks any button, event listeners need to be set to account for results
 
-=========================================
-Icebox Features:
-=========================================
+## Icebox Features:
 
 1. Refactoring code and making code more efficient and DRY
 
