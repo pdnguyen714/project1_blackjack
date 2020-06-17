@@ -1,36 +1,27 @@
 /* ===== constants ===== */
-
 const dealer = "Dealer";
 const player = "You";
 const tie = "tie";
 
-
 /* ===== app states (mutables) ===== */
-
 let playerHand = [];
 let dealerHand = [];
 let isWinner = null;
 let pScore = 0;
 let dScore = 0;
 
-
 /* ===== functions ===== */
 
-
 // retrieve and append user's name into DOM
-
 function getName() {
   let input = prompt('Welcome to House of Blackjack! What is your name friend?');
   if (input === null || input === '') return; //break out of the function early
-
-  document.getElementById('person').innerHTML = input;
-  
+  document.getElementById('person').innerHTML = input; 
 };
 
 getName();
 
 // closes rules modal
-
 let $getRules = $('.rules');
 let $closeX = $('#closeRules');
 
@@ -39,7 +30,6 @@ $('#closeRules').on('click', function() {
 })
 
 //Fisher-Yate's Shuffle algorithm
-
 function shuffle(deck) {
   let i, j = 0,
 
@@ -53,7 +43,6 @@ function shuffle(deck) {
 }
 
 // begins the initial state of game
-
 function startGame() {
   hideResetBtn();
   initialHand();
@@ -65,7 +54,6 @@ function startGame() {
 startGame();
 
 //distributes 2 cards to the dealer and player at the start
-
 function initialHand() {
   shuffle(deck);
 
@@ -85,7 +73,6 @@ function initialHand() {
 }
 
 //calculates the score
-
 function calculateScore(hand) {
   let score = 0;
   let aces = 0;
@@ -104,7 +91,6 @@ function calculateScore(hand) {
 }
 
 //adds a card to the player's hand
-
 function hit() {
   playerHand.push(deck.pop());
   pScore = calculateScore(playerHand);
@@ -120,7 +106,6 @@ function hit() {
 }
 
 //ends turn and keeps hand
-
 function stay() {
   dScore = calculateScore(dealerHand);
   pScore = calculateScore(playerHand);
@@ -143,7 +128,6 @@ function stay() {
 }
 
 //renders cards to browser
-
 function render() {
   document.getElementById("dealer-hand").innerHTML = "";
   dealerHand.forEach((card, idx) => {
@@ -160,7 +144,6 @@ function render() {
 }
 
 // checks for winner
-
 function checkForWinner() {
   if (isWinner !== null) {
     if (isWinner === player) {
@@ -180,41 +163,34 @@ function checkForWinner() {
 }
 
 //hide buttons when there is a winner
-
 function hide() {
   $('#hit').hide();
   $('#stay').hide();
 }
 
 // hides reset button when there is no winner
-
 function hideResetBtn() {
   $('#reset').hide()
 }
 
 // shows reset button when there is a winner
-
 function showResetBtn() {
   $('#reset').show()
 }
 
 //show hit & stay buttons when player resets
-
 function showBtns() {
   $('#hit').show();
   $('#stay').show();
 }
 
 //clears scores of previous game
-
 function clearScores() {
   document.getElementById("dealer-score").innerHTML = "Score: ";
   document.getElementById("player-score").innerHTML = "Score: ";
 }
 
-
-//event listeners
-
+/* ===== event listeners ===== */
 $('.rules').hide();
 let $toggleRules = $('#rulesBtn').on('click', function(e) {
   $('.rules').fadeToggle('slow', "linear");
